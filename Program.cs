@@ -21,6 +21,32 @@ namespace Plattform
             road = road.Insert(1, car);
 
             Console.WriteLine(road);
+
+
+            ConsoleKeyInfo keyInfo;
+
+            while ((keyInfo = Console.ReadKey(true)).Key != ConsoleKey.Escape)
+            {
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                        break;
+                    case ConsoleKey.RightArrow:
+                        break;
+                    case ConsoleKey.DownArrow:
+                        break;
+                    case ConsoleKey.LeftArrow:
+                        break;
+
+                }
+
+            }
+
+
         }
+
+
+
+
     }
 }
