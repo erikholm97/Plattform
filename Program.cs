@@ -8,20 +8,12 @@ namespace Plattform
         {
             Console.WriteLine("Hello World!");
 
-            DrawRoad();
+            StartGame();
+                
         }
-
-        private static void DrawRoad()
+        private static void StartGame()
         {
-            string road = "|      |";
             
-            string car = "V";
-
-
-            road = road.Insert(1, car);
-
-            Console.WriteLine(road);
-
 
             ConsoleKeyInfo keyInfo;
 
@@ -29,24 +21,43 @@ namespace Plattform
             {
                 switch (keyInfo.Key)
                 {
-                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.UpArrow: // ENUM
+                        DrawRoad(ConsoleKey.UpArrow);
                         break;
-                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.RightArrow: // skicka en parameter (consolekey) till drawroad
+                        DrawRoad(ConsoleKey.RightArrow);
                         break;
                     case ConsoleKey.DownArrow:
+                        DrawRoad(ConsoleKey.DownArrow);
                         break;
                     case ConsoleKey.LeftArrow:
+                        DrawRoad(ConsoleKey.LeftArrow);
+
                         break;
-
                 }
-
             }
-
-
         }
 
+        private static void DrawRoad(ConsoleKey key)// instans 
+        {
+            int position = 0;
+           if (key == ConsoleKey.LeftArrow)
+            {
+                position = -1;
+            }
 
+            string road = "|        |";
+            
+            string car = "V";
 
+            Console.WriteLine(road);
 
+            while(true)
+            {
+                road = road.Insert(position, car);
+                Console.WriteLine(road);
+                Console.ReadLine();
+            }
+        }
     }
 }
