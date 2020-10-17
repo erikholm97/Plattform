@@ -14,18 +14,22 @@ namespace Plattform
 
         private static void StartGame()
         {
-            throw new NotImplementedException();
+            DrawRoad();
         }
 
-        private static void DrawRoad()
+        private static void DrawRoad(int one = 1)
         {
+
             string road = "|        |";
             
             string car = "V";
 
-            road = road.Insert(1, car);
-
-            Console.WriteLine(road);
+            while(one == 1)
+            {
+                road = road.Insert(one, car);
+                Console.WriteLine(road);
+                Console.ReadLine();
+            }
         }
     }
 }
