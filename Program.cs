@@ -8,15 +8,20 @@ namespace Plattform
         {
             Console.WriteLine("Hello World!");
 
+            StartGame();
             DrawRoad();
+        }
+
+        private static void StartGame()
+        {
+            throw new NotImplementedException();
         }
 
         private static void DrawRoad()
         {
-            string road = "|      |";
+            string road = "|        |";
             
             string car = "V";
-
 
             road = road.Insert(1, car);
 
